@@ -65,5 +65,5 @@ foreach ($students as $student) {
     echo "{$student['name']} kora: {$student['age']} év.<br>";
 }
 
-//hf:users tomb ami majd lehetove teszi az authetikáciot
+//hf:users tomb ami majd lehetove teszi az authetikáciot,foreach el irasd ki
 ?>
