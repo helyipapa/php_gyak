@@ -3,9 +3,9 @@
 
     trait GreetingTrait
     {
-        public function sayHello($name = "Guest")
+        public function greet($name = "Guest")
         {
-            echo "hello,$name!";
+            return "hello,$name!";
         }
     }
 ?>
