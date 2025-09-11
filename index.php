@@ -1,9 +1,4 @@
 <?php
-    require "App/Helper.php";
+echo "szia";
 
-    /*use function Application\sayHello; //fgv globalis névtérben importalas
-
-    echo sayHello();*/
-
-    echo \Application\sayHello();
 ?>

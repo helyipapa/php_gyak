@@ -43,4 +43,35 @@
     }
 
     echo MathHelper::$pi;
+    echo MathHelper::square(5);
+
+    //keszits egy electricCar osztalyt ami orokli a cart és pluszban tartalmaz batteryCapacity tulajdonsagot
+
+    class ElectricCar extends Car
+    {
+        public $batteryCapacity;
+
+        public function __construct($brand,$type,$color)
+        {
+            
+        }
+        public function info()
+        {
+            parent::info();
+            echo "akkumlatorkapacitasa: {$this->batteryCapacity} kWh.";
+        }
+    }
+
+    //$eCar = new Electrical("Tesla,"Model 3","fehér",10000);
+    class User{
+        use GreetingTreat;
+    }
+    $user = new User();
+    $user -> greet();
+
+    $admin = new Admin();
+    $admin -> greet("mozso");
+
+
 ?>
+
