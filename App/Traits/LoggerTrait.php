@@ -1,12 +1,10 @@
 <?php
 
     namespace App\Traits;
-
-    trait LoggerTrait
-    {
+    trait LoggerTrait{
         public function log($message = "Vendég bejelentkezve")
-        {
-            echo "Log: $message";
-        }
+            {
+                echo "[LOG]: $message\n";
+            }
     }
 ?>
