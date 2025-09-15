@@ -1,20 +1,39 @@
 <?php
-  
+$name = '';
+$pass = '';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['name'])) {
+        $name = $_POST['name'];
+    }
+    if (isset($_POST['pass'])) {
+        $pass = $_POST['pass'];
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['name'])) {
+    $name = $_GET['name'];
+}
 ?>
-  <!DOCTYPE html>
-    <html lang="hu">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>Ürlapkezelés</h1>
-
-        <form action="" method="post">
-            <label for="name">Név:</label>
-            <input type="text" name="name" id="name">
-            <button type="submit">Küld</button>
-        </form>
-    </body>
-    </html>
+<html>
+<head>
+    <title>Űrlap</title>
+</head>
+<body>
+    <p><a href="?name=admin">Kattints ide a üdvözléshez</a></p>
+    <h1>Űrlap</h1>
+    <form action="" method="post">
+        <label for="name">Név:</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="pass">Jelszó:</label>
+        <input type="password" name="pass" id="pass">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <?php if ($name): ?>
+        <p>Hello, <?php echo htmlspecialchars($name); ?>!</p>
+    <?php endif; ?>
+    <?php if ($pass): ?>
+        <p>Your password is: <?php echo htmlspecialchars($pass); ?></p>
+    <?php endif; ?>
+</body>
+</html>
