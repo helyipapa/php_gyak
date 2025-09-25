@@ -1,7 +1,7 @@
 <?php
 $name = '';
 $pass = '';
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+/*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['name'])) {
         $name = $_POST['name'];
     }
@@ -11,6 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['name'])) {
     $name = $_GET['name'];
+}*/
+
+//ha Get és Post is lehet
+if(isset($_REQUEST["name"]))
+{
+    $name = htmlspecialchars($_REQUEST["name"]);
+    $pass = $_REQUEST["pass"];
+    echo "hello,$name($pass)";
 }
 ?>
 <html>
